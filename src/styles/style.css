@@ -1,0 +1,291 @@
+@charset "UTF-8";
+
+/*
+*{
+  margin:0
+}
+*/
+
+/*
+code below allows for sidebar to disappear
+after browser minimizes to certain level
+*/
+
+/*
+@media (max-width: 768px) {
+    .side-menu {
+        display: none;
+    }
+}
+*/
+
+
+a{
+  text-decoration: none;
+  color: #000000;
+  
+}
+
+
+body {
+  height: 100%;
+  font-family:  'Assistant', sans-serif;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+hr {
+  width: 50%;
+}
+
+.side-menu{
+  position: fixed; /* allows for side menu to stay in view while scrolling*/
+  height: 100%; /* Full-height */
+  left:17px;
+
+  font-size: 15pt;
+  box-sizing: border-box;
+  width: 50%; /* not sure if needed yet */
+  /*border: 5px solid red;*/
+  float: left;
+  text-align: center;
+}
+
+.side-link{
+  color:black !important;
+}
+
+.side-link:hover{
+  color:lightgrey !important;
+}
+
+/* 
+    utilized the gap space technique in code below from:
+    https://coryrylan.com/blog/css-gap-space-with-flexbox 
+*/
+.links {
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin: -5px 0 0 -5px;
+  width: calc(100% + 5px);
+  justify-content: center;
+  padding-top: 1em;
+}
+
+.links > * {
+  margin: 5px 0 0 5px;
+}
+
+.photo-collage-thumbnails{
+  /*
+  box-sizing:content-box;
+  border: 5px solid red;
+  float: center;
+  */
+  text-align: center;
+  margin:0;
+  list-style-type: none;
+
+  /* code below allows side by side images */
+  padding-top: 5px;
+}
+
+
+.img__wrap {
+  position: relative;
+  height: 300px;
+  width: 300px;
+
+  /* code below allows side by side images */
+  float: left;
+  padding: 2px; /* overall padding between each image */
+}
+
+.photo__description {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+
+  /* transition effect. not necessary */
+  transition: opacity .2s, visibility .2s;
+}
+
+.img__wrap:hover .photo__description {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*#################
+
+'photos' section for every individual page
+
+#################*/
+
+.photo_post{
+  margin-top: 0;
+  margin-bottom:0;
+  color:black;
+  text-align: center;
+
+  margin-left: inherit;
+  margin-right: 5em;
+}
+
+.photo_post h1{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: normal;
+  font-size: 90px;
+  margin: 0;
+}
+
+.photo_post ul{
+  list-style: none;
+}
+
+.photo_post li{
+  font-size: 15px;
+   display:inline-block; 
+  padding: 0 15px;
+  border-right: 1px solid #999; 
+
+}
+
+.photo_post li:last-child{
+  border-right:0;
+}
+
+.fa-calendar-o{
+  padding: 5px;
+  position:relative;
+  display: inline-block;
+}
+
+.fa-map-marker{
+  padding: 5px;
+  position:relative;
+  display: inline-block;
+}
+
+.fa-camera{
+  padding: 5px;
+  position:relative;
+  display: inline-block;
+}
+
+.photo_post img{
+  height: 70%;
+  width: 70%;
+  position: relative;
+}
+
+
+/*#################
+
+social media icons section
+
+#################*/
+
+/* Style all font awesome icons */
+.fa {
+  font-size: 30px;
+  text-align: center;
+  text-decoration: none;
+  float: center;
+
+}
+
+/* Add a hover effect if you want
+.fa:hover {
+  opacity: 0.7;
+}
+*/
+
+/* Set a specific color for each brand */
+
+.fa-github{
+  padding: 10px;
+  /* width: 30px; */
+  /*left: 15px;*/
+  /* left:30px; controls how far u want the icon from left side of sidebar */
+
+  background: #ffffff;
+  color: black;
+
+  /* allows icons to be bottom of sidebar */
+  /*
+  position: absolute;
+  display: inline-block;
+  bottom: 50px;
+  */
+
+  border: 1px solid black;
+}
+.fa-github:hover{
+  opacity: 0.7;
+}
+
+.fa-linkedin{
+  padding: 10px;
+  /*
+  width: 30px;
+  left: 85px;
+  */
+
+  background: #ffffff;
+  color: black;
+
+  /* allows icons to be bottom of sidebar */
+  /*
+  position: absolute;
+  display: inline-block;
+  bottom: 50px;
+  */
+
+  border: 1px solid black;
+}
+.fa-linkedin:hover{
+  opacity: 0.7;
+}
+
+
+/* Email Address */
+.fa-envelope {
+  padding: 10px;
+  /*
+  width: 30px;
+  left: 140px;
+  */
+
+  background: #ffffff;
+  color: black;
+
+  /* allows icons to be bottom of sidebar */
+  /*
+  position: absolute;
+  display: inline-block;
+  bottom: 50px;
+  */
+
+  border: 1px solid black;
+}
+.fa-envelope:hover{
+  opacity: 0.7;
+}
+
+#thumbnail {
+    height: 10%;
+    width:  10%;
+    padding-bottom: 1em;
+}
+
+@media only screen and (max-width: 699px) {
+  .fa-envelope{
+    padding: 0.43em;
+  }
+}
